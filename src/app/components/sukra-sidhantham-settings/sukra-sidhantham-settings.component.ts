@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SukraSidhanthamService } from 'src/app/services/sukra-sidhantham.service';
@@ -30,10 +30,10 @@ export class SukraSidhanthamSettingsComponent implements OnInit {
 
   autoDetectAcc: number = -1
   manual: Boolean = false
-  detailsForm: FormGroup = new FormGroup({
-    'lat': new FormControl('', [Validators.required]),
-    'lng': new FormControl('', [Validators.required]),
-    'date': new FormControl(new Date(), [Validators.required])
+  detailsForm: UntypedFormGroup = new UntypedFormGroup({
+    'lat': new UntypedFormControl('', [Validators.required]),
+    'lng': new UntypedFormControl('', [Validators.required]),
+    'date': new UntypedFormControl(new Date(), [Validators.required])
   })
 
   knownLocations = [

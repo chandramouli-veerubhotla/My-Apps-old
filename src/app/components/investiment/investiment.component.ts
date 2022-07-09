@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject  } from 'rxjs';
 import { Input, Output, EventEmitter} from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 export interface Investiment {
@@ -21,14 +21,14 @@ export interface Investiment {
 })
 export class InvestimentComponent implements OnInit {
 
-  investimentForm: FormGroup = new FormGroup({
-    investedAmountType: new FormControl('1', [Validators.required]),
-    investedAmount: new FormControl('', [Validators.required, Validators.min(0)]),
-    investedDate: new FormControl(this.getToday(), [Validators.required]),
-    investedDateHelper: new FormControl('today'),
-    tillDate: new FormControl(this.getFYEnd(), [Validators.required]),
-    tillDateHelper: new FormControl('fy'),
-    totalDays: new FormControl(0, [Validators.min(0)])
+  investimentForm: UntypedFormGroup = new UntypedFormGroup({
+    investedAmountType: new UntypedFormControl('1', [Validators.required]),
+    investedAmount: new UntypedFormControl('', [Validators.required, Validators.min(0)]),
+    investedDate: new UntypedFormControl(this.getToday(), [Validators.required]),
+    investedDateHelper: new UntypedFormControl('today'),
+    tillDate: new UntypedFormControl(this.getFYEnd(), [Validators.required]),
+    tillDateHelper: new UntypedFormControl('fy'),
+    totalDays: new UntypedFormControl(0, [Validators.min(0)])
   })
 
   constructor(private _bottomSheetRef: MatBottomSheetRef<InvestimentComponent>) { }

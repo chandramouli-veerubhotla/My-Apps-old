@@ -5,13 +5,23 @@
             <p class="text-gray-600 text-sm font-primary">Provide which nakshatram on the time of travelling.</p>
         </div>
 
-        <div class="grid grid-cols-1 gap-2">
+        <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-2">
             <div>
                 <mat-form-field class="w-full">
                     <mat-label>Nakshatram</mat-label>
-                    <mat-select formControlName="todayNakshatraIdx">
+                    <mat-select formControlName="nakshatraIdx" required>
                         <mat-option *ngFor="let nakshatra of nakshatras;let i=index" [value]="i">
                           {{nakshatra}}
+                        </mat-option>
+                      </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="w-full">
+                    <mat-label>Day</mat-label>
+                    <mat-select formControlName="day" required>
+                        <mat-option *ngFor="let day of days;let i=index" [value]="i">
+                          {{day}}
                         </mat-option>
                       </mat-select>
                 </mat-form-field>

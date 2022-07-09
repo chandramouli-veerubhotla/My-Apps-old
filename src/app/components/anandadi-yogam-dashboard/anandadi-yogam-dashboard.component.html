@@ -1,4 +1,17 @@
 <div class="mt-16">
-    <p>{{todayNakshatraIdx}}</p>
+    <mat-toolbar class="w-full shadow-lg bg-white h-16 text-black transition-all duration-500 shadow-md border-opacity-10 border-b border-slate-900/10 flex items-center justify-between">
+        <button class="text-sm font-primary text-gray-800" (click)="openSettings()">Change settings <mat-icon>arrow_drop_down</mat-icon></button>
+      </mat-toolbar>
+    <div class="w-full border border-slate-200 gap-2" *ngIf="results != null">
+        <mat-toolbar class="flex items-center justify-between bg-slate-300">
+           <span class="text-sm font-primary text-slate-700">{{nakshatra}}</span>
+           <mat-icon class="text-md text-slate-700">east</mat-icon>
+           <span class="text-sm font-primary text-slate-700">{{day}}</span>
+         </mat-toolbar>
+
+         <div class="text-center py-14 space-y-4" [ngClass]="{'text-green-600': results.resultCode > 0, 'text-red-600': results.resultCode <= 0}">
+            <p class="text-xl font-lite leading-tight font-primary">{{results.results}}</p>
+         </div>
+    </div>
 </div>
 
