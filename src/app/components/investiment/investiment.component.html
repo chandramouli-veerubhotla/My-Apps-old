@@ -1,0 +1,60 @@
+<div class="px-2 py-4">
+    <form [formGroup]="investimentForm" (ngSubmit)="addInvestiment()">
+        <div>
+            <div class="mb-4">
+                <div class="font-medium text-xl leading-tight">Investment Details</div>
+                <p class="text-gray-600 text-sm font-primary">Provide details of your investiment to calibrate.</p>
+            </div>
+    
+            <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-2">
+                <div>
+                    <mat-button-toggle-group class="mb-2" formControlName="investedAmountType">
+                        <mat-button-toggle value="1" (click)="setInvestmentAmontType('1')">Credit</mat-button-toggle>
+                        <mat-button-toggle value="-1" (click)="setInvestmentAmontType('-1')">Debit</mat-button-toggle>
+                      </mat-button-toggle-group>
+
+                    <mat-form-field class="w-full">
+                        <mat-label>Investiment</mat-label>
+                        <input matInput type="number" placeholder="Enter invested amount"  formControlName="investedAmount" name="investedAmount" required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-2">
+                <div>
+                    <mat-button-toggle-group class="mb-2" formControlName="investedDateHelper">
+                        <mat-button-toggle value="today" (click)="setToday('investedDate')">Today</mat-button-toggle>
+                        <mat-button-toggle value="startFY" (click)="setStartFY('investedDate')">Start of FY</mat-button-toggle>
+                      </mat-button-toggle-group>
+    
+                    <mat-form-field class="w-full">
+                        <mat-label>Invested Date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="investedDate" required>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-button-toggle-group class="mb-2" formControlName="tillDateHelper">
+                        <mat-button-toggle value="fy" (click)="setEndFY('tillDate')">End of this FY</mat-button-toggle>
+                        <mat-button-toggle value="1y" (click)="setYears('tillDate', 1)">1Y</mat-button-toggle>
+                        <mat-button-toggle value="3y" (click)="setYears('tillDate', 3)">3Y</mat-button-toggle>
+                        <mat-button-toggle value="5y" (click)="setYears('tillDate', 5)">5Y</mat-button-toggle>
+                      </mat-button-toggle-group>
+    
+                    <mat-form-field class="w-full">
+                        <mat-label>Till Date</mat-label>
+                        <input matInput [matDatepicker]="till" formControlName="tillDate" required>
+                        <mat-datepicker-toggle matSuffix [for]="till"></mat-datepicker-toggle>
+                        <mat-datepicker #till></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                
+            </div>
+        </div>
+<!-- 
+        <p class="text-xs text-gray-700 mb-2 text-justify">MY Apps will never store any of your information. All the calculations will be done on your device and will not move out of your device.</p>         -->
+        <div class="space-x-1">
+            <button class="px-5 py-3 bg-slate-900 text-white w-full rounded-md text-base hover:bg-slate-800 disabled:bg-gray-200 disabled:text-white" type="submit" [disabled]="!investimentForm.valid">Add investment</button>
+        </div>            
+    </form>
+</div>

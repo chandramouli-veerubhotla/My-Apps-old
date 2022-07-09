@@ -1,0 +1,76 @@
+<div class="flex justify-center pt-8 mt-16">
+    <div class="sm:w-full md:w-1/2 px-4">
+        <div class="mb-4">
+            <div class="font-bold sm:text-xl md:text-2xl text-slate-800 font-primary leading-tight">Interest Calculator</div>
+            <p class="text-gray-600 text-sm font-primary">Estimate and calibrate your financial budgets right here.</p>
+        </div>
+        <hr class="mb-3">
+        <div>
+            
+
+            <mat-accordion>
+                <mat-expansion-panel class="nobox-shadow" [expanded]="returnsPercentage === 0.">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <div class="font-medium text-md">Settings</div>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <p class="text-gray-600 text-sm font-primary mb-2">Set your estimated returns percentage.</p>
+                
+                  <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-2">
+                    <div>
+                        <mat-form-field class="w-full mb-2">
+                            <mat-label>Return %</mat-label>
+                            <input matInput type="number" placeholder="Enter yearly returns percentage" #yearlyReturns name="yearlyReturns" required>
+                            <mat-hint *ngIf="returnsPercentage != 0.">Daily percentage estimated: {{returnsPercentage | number: '1.1-6'}}%</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+                <button class="px-5 py-3 bg-slate-900 text-white w-full rounded-md text-base hover:bg-slate-800" (click)="applySettings(yearlyReturns.value)">Apply settings</button>
+                </mat-expansion-panel>
+              </mat-accordion>
+            
+        </div>
+        <div class="flex items-center h-64" *ngIf="allInvestments.length <= 0">
+            <div class="m-auto text-center">
+              <span class="text-gray-700 text-md font-lite">No transactions yet.<br><a class="text-blue-800 font-lite text-md cursor-pointer" (click)="addInvestment()">Start transaction by clicking here</a></span>
+            </div>
+          </div>
+
+        <div class="divide-y-2 divide-slate-100 mb-4" *ngIf="allInvestments.length > 0">
+            <a class="w-full p-3 cursor-pointer" *ngFor="let investiment of allInvestments; let i = index">                
+                <div class="w-full flex items-center justify-between">
+                    <div [ngClass]="{'text-green-600': investiment.details.investedAmountType == 1, 'text-red-600': investiment.details.investedAmountType == -1}">
+                        <div class="font-bold text-md">{{investiment.details.investedAmount | currency : 'INR'}}/-</div>
+                        <p class="text-sm font-primary">Int. for {{investiment.details.totalDays}} days {{investiment.interest | currency: 'INR'}}/-</p>
+                    </div>
+
+                    <!-- actions -->
+                    <div class="space-x-1">
+                        <button class="h-full rounded-md p-4 text-red-600 bg-red-50" (click)="deleteInvestment(i)"><mat-icon class="material-icons-outlined">delete_sweep</mat-icon></button>
+                    </div>
+                </div>
+            </a>
+            <div class="w-full">
+                <div class="font-bold text-md mb-4">Overall stats</div>
+                <div class="px-2">
+                    <div class="font-bold text-md">{{total | currency : 'INR'}}/-</div>
+                    <p class="text-gray-600 text-sm font-primary">Int. amount {{totalInterest | currency: 'INR'}}/-</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4" *ngIf="returnsPercentage != 0.">
+            <button class="px-5 py-3 bg-slate-900 text-white w-full rounded-md text-base hover:bg-slate-800" (click)="addInvestment()">Add transaction</button>
+        </div>
+
+        
+<!--         
+        <app-investiment [previousInvestiment]="previousInvestiment" (newInvestiment)="new($event)" (calculate)="calculate()" *ngIf="finished == false"></app-investiment> -->
+    </div>
+</div>

@@ -1,0 +1,103 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$my-apps-primary: mat.define-palette(mat.$indigo-palette);
+$my-apps-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$my-apps-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$my-apps-theme: mat.define-light-theme((
+  color: (
+    primary: $my-apps-primary,
+    accent: $my-apps-accent,
+    warn: $my-apps-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($my-apps-theme);
+
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+mat-icon {
+  vertical-align: middle;
+}
+.font-primary {
+    font-family: "Google Sans", "Poppins", sans-serif;
+}
+
+.font-ascent {
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    @extend .font-primary;
+    margin: 0;
+    height: 100%;
+    background-color: white;
+    scroll-behavior: smooth !important;
+}
+
+.h-screen {
+  padding-top: 64px;
+}
+
+.mat-tab-labels {
+  @apply px-5;
+}
+
+.mat-tab-labels {
+  @apply bg-slate-800;
+}
+
+
+
+.mat-tab-label {
+  @apply px-4 text-sm font-primary transition-all text-white;
+}
+
+.mat-tab-label.mat-tab-label-active {
+  //@apply text-orange-500;
+  @apply bg-white text-gray-800 rounded-sm;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {   
+        height:0px;
+        border: none;
+ }
+
+ .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+
+
+.bottom-sheet {
+  @apply rounded-t-xl;
+}
+
+.snackbar {
+  @apply bg-slate-900 px-4;
+}

@@ -1,0 +1,28 @@
+<div class="mt-16">
+    <mat-toolbar class="w-full shadow-lg bg-white h-16 text-black transition-all duration-500 shadow-md border-opacity-10 border-b border-slate-900/10 flex items-center justify-between" *ngIf="settings != null">
+      <mat-checkbox [(ngModel)]="isDayTime" (change)="applySettings(settings, isDayTime)" class="text-sm font-primary text-gray-800">Day Time</mat-checkbox>
+      <span class="text-sm font-primary text-gray-800">{{settings.date | date:'EEE, MMM d, y'}}</span>
+      <button class="text-sm font-primary text-gray-800" (click)="openSettings()">Change settings <mat-icon>arrow_drop_down</mat-icon></button>
+    </mat-toolbar>
+    <mat-toolbar class="w-full bg-white h-16 text-black transition-all duration-500 border-opacity-10 border-b flex items-center justify-between" *ngIf="settings != null">
+        <span class="text-sm font-lite fornt-primary leading-tight text-green-600" *ngIf="sunrise != null"><mat-icon>sunny</mat-icon> {{sunrise | date: 'shortTime'}}</span>
+        
+        <span class="text-sm font-lite fornt-primary leading-tight text-orange-600" *ngIf="sunset != null"><mat-icon>nights_stay</mat-icon> {{sunset | date: 'shortTime'}}</span>
+    </mat-toolbar>
+    <div class="w-full md:px-8 md:pb-8">
+          <div class="grid md:grid-cols-4 sm:grid-cols-1">
+            <div class="w-full border border-slate-200 gap-2" *ngFor="let hora of horas; let i=index">
+                <mat-toolbar class="flex items-center justify-between bg-slate-300">
+                   <span class="text-sm font-primary text-slate-700">{{hora.start | date: 'shortTime'}}</span>
+                   <mat-icon class="text-md text-slate-700">east</mat-icon>
+                   <span class="text-sm font-primary text-slate-700">{{hora.end | date: 'shortTime'}}</span>
+                 </mat-toolbar>
+
+                 <div class="text-center py-14 space-y-4">
+                    <span class="rounded-full bg-orange-600 text-white px-2 py-2 mb-8">{{hora.id + 1}}</span>
+                    <p class="text-gray-800 text-xl font-lite leading-tight font-primary">{{hora.prediction}}</p>
+                 </div>
+            </div>
+          </div>
+    </div>
+</div>

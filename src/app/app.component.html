@@ -1,0 +1,14 @@
+<header class="bg-slate-900 w-full h-16 fixed top-0 text-white transition-all duration-500 border-opacity-10 border-b border-slate-900/10 shadow-md px-8 flex items-center justify-between">
+  <div class="space-x-1">
+    <a class="text-xl leading-none font-primary cursor-pointer font-bold transition-all duration-200 hover:text-slate-300" routerLink="/"><span class="text-orange-500">MY</span><span> Apps</span></a>
+     <a class="px-4 text-sm font-primary transition-all duration-200 hover:text-orange-500" routerLink="/sukra-sidhandham" [routerLinkActive]="['text-orange-500']">Sukra Sidhantham</a>
+    <a class="px-4 text-sm font-primary transition-all duration-200 hover:text-orange-500" routerLink="/anandadi-yogam" [routerLinkActive]="['text-orange-500']">Anandadi Yogam</a> 
+  </div>
+  <div class="space-x-1">
+    
+  </div>
+</header>
+
+<div>
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

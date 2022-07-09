@@ -1,0 +1,55 @@
+<div class="px-2 py-4 w-full">
+    <form [formGroup]="detailsForm">
+        <div class="mb-4">
+            <div class="font-bold text-md text-slate-800 font-primary leading-tight">Location details</div>
+            <p class="text-gray-600 text-sm font-primary">Provide your location details to accurately find sukra hora details.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-2">
+            <div>
+                <div class="mb-1">
+                    <button class="px-4 py-2 font-primary bg-gray-300 text-black hover:bg-gray-400 rounded" (click)="autoDetect()">Auto detect</button>                        
+                </div>
+                <mat-form-field class="w-full">
+                    <mat-label>Location</mat-label>
+                    <mat-select (selectionChange)="updateLatLong($event.value)">
+                        <mat-option *ngFor="let location of knownLocations" [value]="location.geoCoordinates">
+                          {{location.name}}
+                        </mat-option>
+                      </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-2" *ngIf="manual == true">
+            <div>
+                <mat-form-field class="w-full">
+                    <mat-label>Latitude</mat-label>
+                    <input matInput type="number" placeholder="Enter latitude"  formControlName="lat" name="lat" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="w-full">
+                    <mat-label>Longitude</mat-label>
+                    <input matInput type="number" placeholder="Enter longitude" formControlName="lng" name="lng" required>
+                </mat-form-field>
+            </div>
+        </div>
+       
+        <div class="mb-4">
+            <div class="font-bold text-md text-slate-800 font-primary leading-tight">Travel Date</div>
+            <p class="text-gray-600 text-sm font-primary">Provide your travel date to preciesily find right details.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-2">
+            <div>
+                <mat-form-field class="w-full">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="date" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <button class="px-5 py-3 bg-slate-900 text-white w-full rounded-md text-base hover:bg-slate-800 disabled:bg-gray-200 disabled:text-white" type="submit" [disabled]="!detailsForm.valid" (click)="calculate()">Calculate details</button>
+    </form>
+</div>

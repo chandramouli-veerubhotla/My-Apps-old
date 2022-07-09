@@ -1,0 +1,22 @@
+<div class="px-2 py-4 w-full">
+    <form [formGroup]="detailsForm">
+        <div class="mb-4">
+            <div class="font-bold text-md text-slate-800 font-primary leading-tight">Nakshatram details</div>
+            <p class="text-gray-600 text-sm font-primary">Provide which nakshatram on the time of travelling.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-2">
+            <div>
+                <mat-form-field class="w-full">
+                    <mat-label>Nakshatram</mat-label>
+                    <mat-select formControlName="todayNakshatraIdx">
+                        <mat-option *ngFor="let nakshatra of nakshatras;let i=index" [value]="i">
+                          {{nakshatra}}
+                        </mat-option>
+                      </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <button class="px-5 py-3 bg-slate-900 text-white w-full rounded-md text-base hover:bg-slate-800 disabled:bg-gray-200 disabled:text-white" type="submit" [disabled]="!detailsForm.valid" (click)="apply()">Find anandadi yogam</button>
+    </form>
+</div>
