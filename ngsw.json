@@ -1,0 +1,87 @@
+{
+  "configVersion": 1,
+  "timestamp": 1657554407423,
+  "index": "https://chandramouli-veerubhotla.github.io/My-Apps/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://chandramouli-veerubhotla.github.io/My-Apps/favicon.ico",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/index.html",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/main.532483f34da804de.js",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/manifest.webmanifest",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/polyfills.0098adeedeb61799.js",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/runtime.ab40ce60927284c4.js",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/styles.1627b13a145b3d97.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://chandramouli-veerubhotla.github.io/My-Apps/assets/anandadi-yogam.json",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-128x128.png",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-144x144.png",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-152x152.png",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-192x192.png",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-384x384.png",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-512x512.png",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-72x72.png",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-96x96.png",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/assets/nakshatras.json",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/assets/sukra-hora.json"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://chandramouli-veerubhotla.github.io/My-Apps/assets/anandadi-yogam.json": "1fc89f975c5ebfc7aeec2c45a4f97a87457f1565",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/assets/nakshatras.json": "540ae34ef1e2c48668f11bfa07dcda3acc301c7d",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/assets/sukra-hora.json": "bb63ca9cdff75f2086f9461f64b894d00c5b90dd",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/index.html": "09b8fcf243b01c2f434dd17e4d721c5b93274018",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/main.532483f34da804de.js": "2efca521d36c22dcd8d600ea788d82b4ef95ab99",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/manifest.webmanifest": "b7d26796a994a364a79c1c0a78ae72b2ae002e64",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/polyfills.0098adeedeb61799.js": "4ded516fd5db4df53ed2763cb5d1ccd462bad276",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/runtime.ab40ce60927284c4.js": "01ad950dca5e8ec8e9b394f0400af5bf69654eb2",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/styles.1627b13a145b3d97.css": "6d0b2bc0f7bee9a6914e3ef02f48a23845c368af"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
