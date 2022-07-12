@@ -13,6 +13,10 @@ import { SukraSidhanthamDashboardComponent } from './components/sukra-sidhantham
 import { HttpClientModule } from '@angular/common/http';
 import { AnandadiYogamDashboardComponent } from './components/anandadi-yogam-dashboard/anandadi-yogam-dashboard.component';
 import { AnandadiYogamSettingsComponent } from './components/anandadi-yogam-settings/anandadi-yogam-settings.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TarabalamComponent } from './components/tarabalam/tarabalam.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { AnandadiYogamSettingsComponent } from './components/anandadi-yogam-sett
     SukraSidhanthamSettingsComponent,
     SukraSidhanthamDashboardComponent,
     AnandadiYogamDashboardComponent,
-    AnandadiYogamSettingsComponent
+    AnandadiYogamSettingsComponent,
+    DashboardComponent,
+    TarabalamComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,13 @@ import { AnandadiYogamSettingsComponent } from './components/anandadi-yogam-sett
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

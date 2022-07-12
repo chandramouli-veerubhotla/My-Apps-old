@@ -8,9 +8,12 @@
         <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-2">
             <div>
                 <div class="mb-1">
-                    <button class="px-4 py-2 font-primary bg-gray-300 text-black hover:bg-gray-400 rounded" (click)="autoDetect()">Auto detect</button>                        
+                    <button class="px-4 py-2 font-primary bg-gray-300 text-black hover:bg-gray-400 rounded" (click)="autoDetect()" *ngIf="autoDetection != -2">Auto detect</button>
+                    <p class="text-red-500 text-sm mb-3" *ngIf="autoDetection == -2">(Auto Detect failed) Enter manually latitude & longitude / use any of known locations.</p>
+                    <p class="text-green-600 text-sm mb-3" *ngIf="autoDetection == 1">Successfully found your location details {{autoDetectAcc | number}}% accurately!</p>
+
                 </div>
-                <mat-form-field class="w-full">
+                <mat-form-field class="w-full" *ngIf="autoDetection < 0">
                     <mat-label>Location</mat-label>
                     <mat-select (selectionChange)="updateLatLong($event.value)">
                         <mat-option *ngFor="let location of knownLocations" [value]="location.geoCoordinates">
@@ -20,7 +23,7 @@
                 </mat-form-field>
             </div>
         </div>
-        <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-2" *ngIf="manual == true">
+        <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-2" *ngIf="manual == true || autoDetection == 1">
             <div>
                 <mat-form-field class="w-full">
                     <mat-label>Latitude</mat-label>

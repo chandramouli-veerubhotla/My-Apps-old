@@ -52,7 +52,7 @@ export class InvestimentComponent implements OnInit {
     let tillDate = this.investimentForm.controls['tillDate'].value
 
     let diff = Math.abs(tillDate.getTime() - investedDate.getTime());
-    let diffDays = Math.ceil(diff / (1000 * 3600 * 24)) + 1; 
+    let diffDays = Math.ceil(diff / (1000 * 3600 * 24)); 
     if (diffDays >= 0) {
       this.investimentForm.controls['totalDays'].setValue(diffDays)
     }
@@ -65,32 +65,40 @@ export class InvestimentComponent implements OnInit {
     }
   }
 
+  onlyDate(d: Date): Date {
+    let date = new Date(d.getTime())
+    date.setHours(0)
+    date.setMinutes(0)
+    date.setSeconds(0)
+    date.setMilliseconds(0)
+    return date
+  }
 
   getToday() {
-    return new Date()
+    return this.onlyDate(new Date())
   }
 
   getFYEnd() {
-    let today = new Date()
+    let today = this.onlyDate(new Date())
 
     let year = today.getFullYear()
     if (today.getMonth() > 2) {
       year += 1
     }
 
-    let fy = new Date(year, 2, 31)
+    let fy = this.onlyDate(new Date(year, 2, 31))
     return fy
   }
 
   getFYStart() {
-    let today = new Date()
+    let today = this.onlyDate(new Date())
 
     let year = today.getFullYear()
     if (today.getMonth() < 2) {
       year -= 1
     }
 
-    let fy = new Date(year, 3, 1)
+    let fy = this.onlyDate(new Date(year, 3, 1))
     return fy
   }
 
@@ -107,8 +115,8 @@ export class InvestimentComponent implements OnInit {
   }
 
   setYears(control: string, years: number) {
-    let date = new Date()
-    date.setFullYear(date.getFullYear() + years)
+    let date = this.onlyDate(new Date())
+    date.setDate(date.getDate() + (years * 365))
     this.investimentForm.controls[control].setValue(date)
 
   }

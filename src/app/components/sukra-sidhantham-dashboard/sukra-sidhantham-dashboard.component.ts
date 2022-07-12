@@ -28,7 +28,7 @@ export class SukraSidhanthamDashboardComponent implements OnInit {
   }
 
   openSettings() {
-    this._bottomSheet.open(SukraSidhanthamSettingsComponent, {panelClass: 'rounded-t-xl'}).afterDismissed().subscribe(resp => {
+    this._bottomSheet.open(SukraSidhanthamSettingsComponent, {panelClass: 'bottom-sheet'}).afterDismissed().subscribe(resp => {
       if (resp != null) {
         this.settings = resp
         this.applySettings(this.settings, this.isDayTime)
@@ -41,7 +41,7 @@ export class SukraSidhanthamDashboardComponent implements OnInit {
     this.sunrise = details.sunrise
     this.sunset = details.sunset
     this.horas = details.horas
-    this._snackBar.open("Successfully calculated horas!...", 'OK')
+    this._snackBar.open("Successfully calculated horas!...",  undefined, {duration: 3000, panelClass: 'snackbar'})
   }
 
 }

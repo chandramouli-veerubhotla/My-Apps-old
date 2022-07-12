@@ -30,6 +30,7 @@ export class SukraSidhanthamSettingsComponent implements OnInit {
 
   autoDetectAcc: number = -1
   manual: Boolean = false
+  autoDetection: number = -1
   detailsForm: UntypedFormGroup = new UntypedFormGroup({
     'lat': new UntypedFormControl('', [Validators.required]),
     'lng': new UntypedFormControl('', [Validators.required]),
@@ -55,14 +56,18 @@ export class SukraSidhanthamSettingsComponent implements OnInit {
   }
 
   autoDetect() {
+    this.autoDetection = 0
     this.service.getPosition().then(position => {
       this.autoDetectAcc = position.coords.accuracy
       if (position.coords.accuracy < 200) {
+        this._snakBar.open('Successfully found your location', undefined, {duration: 3000, panelClass: 'snackbar'})
         this.updateLatLong({'lat': position.coords.latitude, 'lng': position.coords.longitude})
         this.manual = false
+        this.autoDetection = 1
       } else {
         this._snakBar.open('Failing to find your exact location.', undefined, {duration: 3000, panelClass: 'snackbar'})
         this.manual = true
+        this.autoDetection = -2
       }      
     })
   }
