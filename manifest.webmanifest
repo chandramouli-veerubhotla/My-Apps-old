@@ -2,7 +2,7 @@
   "name": "My Apps",
   "short_name": "My Apps",
   "theme_color": "#0f172a",
-  "background_color": "#fafafa",
+  "background_color": "#0f172a00",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
