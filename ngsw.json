@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1675580633648,
+  "timestamp": 1675581049210,
   "index": "https://chandramouli-veerubhotla.github.io/My-Apps/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://chandramouli-veerubhotla.github.io/My-Apps/favicon.ico",
         "https://chandramouli-veerubhotla.github.io/My-Apps/index.html",
-        "https://chandramouli-veerubhotla.github.io/My-Apps/main.dadaff5b97e06306.js",
+        "https://chandramouli-veerubhotla.github.io/My-Apps/main.ef6548c64e0db703.js",
         "https://chandramouli-veerubhotla.github.io/My-Apps/manifest.webmanifest",
         "https://chandramouli-veerubhotla.github.io/My-Apps/polyfills.0098adeedeb61799.js",
         "https://chandramouli-veerubhotla.github.io/My-Apps/runtime.ab40ce60927284c4.js",
@@ -62,8 +62,8 @@
     "https://chandramouli-veerubhotla.github.io/My-Apps/assets/nakshatras.json": "540ae34ef1e2c48668f11bfa07dcda3acc301c7d",
     "https://chandramouli-veerubhotla.github.io/My-Apps/assets/sukra-hora.json": "bb63ca9cdff75f2086f9461f64b894d00c5b90dd",
     "https://chandramouli-veerubhotla.github.io/My-Apps/favicon.ico": "95d296b4987152b80ea8768aa4ce0066f24bfce7",
-    "https://chandramouli-veerubhotla.github.io/My-Apps/index.html": "343da7234fefe3518b4e6f29d5ce917d7280e6cb",
-    "https://chandramouli-veerubhotla.github.io/My-Apps/main.dadaff5b97e06306.js": "97eb44b1ded0c827ebc276f24ee778078162b832",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/index.html": "b79c99cf43fe0ccb359ceb8a52563e8f897cd1ea",
+    "https://chandramouli-veerubhotla.github.io/My-Apps/main.ef6548c64e0db703.js": "03739a3b87abd466b7063b42ed4503b6c7bd1320",
     "https://chandramouli-veerubhotla.github.io/My-Apps/manifest.webmanifest": "a63fb5e04e5cdcc74ad48698f5ef839ef670659c",
     "https://chandramouli-veerubhotla.github.io/My-Apps/polyfills.0098adeedeb61799.js": "4ded516fd5db4df53ed2763cb5d1ccd462bad276",
     "https://chandramouli-veerubhotla.github.io/My-Apps/runtime.ab40ce60927284c4.js": "01ad950dca5e8ec8e9b394f0400af5bf69654eb2",
