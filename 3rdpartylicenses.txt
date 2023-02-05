@@ -72,6 +72,9 @@ MIT
 angular-plotly.js
 MIT
 
+ng-navigator-share
+MIT
+
 number-to-words
 MIT
 The MIT License (MIT)
